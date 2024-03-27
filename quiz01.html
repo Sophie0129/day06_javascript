@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let userDB = [
+            {id : 'aaa', name : '홍길동', age : 20},
+            {id : 'bbb', name : '김개똥', age : 30},
+            {id : 'ccc', name : '고길동', age : 40},
+        ];
+
+        function Member(){
+            document.write(`
+            <table border="1">
+                <th>아이디</th><th>이름</th><th>나이</th>`);
+
+                for(const user of userDB){
+                document.write(`
+                <tr>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.age}</td>
+                </tr>`);
+
+                //document.write(`</table>`);
+        
+        };  
+        }
+        let input01 = () => {
+            let n1 = prompt('수 입력');
+            return n1
+        }
+        function Find() {
+            let find01 = document.getElementById(find_id);
+            const find02 = userDB.filter(find01);
+            for(let i=0;i<userDB.length;i++){
+            if(find_id == userDB[i][0]){
+                document.write(`
+                <table border="1">
+                    <th>아이디</th><th>이름</th><th>나이</th>`);
+                document.write('<tr>'+userDB[i]);
+            }else {
+                alert("존재하지 않는 회원입니다")
+            }
+            }
+
+        }
+       
+    </script>
+    <style>
+        #mem {}
+    </style>
+</head>
+<body>
+
+
+    <div>목록을 보여줍니다</div>
+    <hr>
+    <button onclick="Member()">모든 회원 보기</button>
+    <hr>
+    
+    <input name="find_id" type="text"; placeholder="input id"><br>
+    <button onclick="Find()">특정 회원 조회</button>
+    <hr>
+
+    <input name="del_id" type="text"; placeholder="input id"><br>
+    <button>특정 회원 삭제</button>
+    <hr>
+
+</body>
+</html>

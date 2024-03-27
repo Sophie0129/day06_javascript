@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let img;
+        let id =1;
+        function add() {
+            img = document.createElement(); // 태그를 만들어준다.
+            console.log(img);
+            img.src='test.png';
+            img
+            img.setAttribute("width", "100")
+            img.setAttribute("style","height:100px; border:1px;solid'")
+
+            document.getElementById('test').appendChild(img);
+        }
+        function addTB() {
+            let data = [
+                {id:'aaa', name : '홍길동'},
+                {id:'bbb', name : '김길동'},
+            ]
+        }
+        let table = document.createElement('table');
+        data.forEach((value)=>{
+            var tr = document.createElement('tr');
+            var td1 = document.createElement('td');
+            td1.innerHTML = balue.id;
+            tr.appendChild(td1);
+
+            var td2 = document.createElement('td');
+                td2.innerHTML = value.name;
+                tr.appendChild(td2);
+
+            table.appendChild(tr);
+        })
+        document.getElementById("test").appendChild(table);
+
+        function remove(){
+            let items = document.getElementById('test')
+            //document.getElementById('test').remove(); //p태그 자체가 사라진다
+            //items.remove();
+            //items.removeChild(items.childNodes[0])
+            items.removeChild(items.childNodes[items.childNodes.length - 1])
+        }
+    </script>
+    <p id="test"></p>
+    <a href="#" onclick="addTB()">테이블 추가</a>
+    <b onclick="add()">add클릭</b> <!--클릭할때마다 태그가 생긴다-->
+
+    <b onclick="remove()">이미지 삭제 클릭</b>
+</body>
+</html>

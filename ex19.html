@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const city = ['서울', '부산', '인천'];
+        const printArr = () => {
+            for(let i=0;i<city.length;i++){
+                document.write(`배열 데이터[${i}] : ${city[i]}<br>`);
+            }
+        }
+        printArr();
+        city[3] = '대구'; //추가가 제한없이 자유롭다
+        document.write("<hr>"+city);
+        document.write(`<br>${typeof city}<br>`)
+
+        const join01 = city.join();
+        const join02 = city.join("-");//값 사이의 표시를 바꾼다
+        document.write(`조인 결과 1 : ${join01}, type : ${typeof join01}<br>`)
+        //타입이 문자열로 바뀌며 더이상 배열이 아니게 된다
+        document.write(`조인 결과 2 : ${join02}, type : ${typeof join02}<br>`)
+    </script>
+</body>
+</html>

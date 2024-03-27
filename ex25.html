@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const test = () => {
+            //alert('test 호출')
+        }
+        window.onload = () => {
+            //document.write('처음 실행<br>');
+            setTimeout(test, 2000); //특정 함수를 한번 호출한다, 알람과 따로 동작하는것
+            //document.write('2초 대기중...<br>')
+        }
+        let e;
+        const digClock = () => {
+            let today = new Date();
+            let time = today.getMonth() + 1 + "월";//+1을 해줘야 현재의 월을 볼 수 있다
+            time += today.getDate() + "일";
+            time += today.getHours() + "시";
+            time += today.getMinutes() + "분";
+            time += today.getSeconds() + "초";
+            document.getElementById("clock").innerHTML = time;
+            e = setTimeout(digClock, 1000); //첫번째값을 호출한다, 두번재 시간의 값만큼 지난 이후에(1초)
+        }
+        const end = () => {clearTimeout(e);}
+        //셋 타임은 해당 코드를 딱 한번만 호출한다
+    </script>
+    <div id="clock"></div>
+    <button onclick="digClock()">시작</button>
+    <button onclick="end()">종료</button>
+</body>
+</html>
